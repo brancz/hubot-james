@@ -54,7 +54,7 @@ module.exports = (robot) ->
       console.log "User: #{JSON.stringify(user)}"
 
       gitio payload.compare_url, (err, data) ->
-        robot.send user, "#{payload.status_message.toUpperCase()} build (#{payload.build_url}) on #{payload.repository.name}:#{payload.branch} by #{payload.author_name} with commit (#{if err then payload.compare_url else data})"
+        robot.send "#{payload.status_message.toUpperCase()} build (#{payload.build_url}) on #{payload.repository.name}:#{payload.branch} by #{payload.author_name} with commit (#{if err then payload.compare_url else data})"
 
     catch error
       console.log "travis hook error: #{error}. Payload: #{req.body.payload}"
