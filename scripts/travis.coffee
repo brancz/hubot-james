@@ -44,14 +44,16 @@ module.exports = (robot) ->
     }
 
     user = {}
-    user.room = query.room if query.room
-    user.type = query.type if query.type
+    user.room = '#kreisverkehr'
+    user.type = 'groupchat'
 
     try
       payload = JSON.parse req.body.payload
 
       gitio payload.compare_url, (err, data) ->
+        console.log "before send"
         robot.send user, "#{payload.status_message.toUpperCase()} build (#{payload.build_url}) on #{payload.repository.name}:#{payload.branch} by #{payload.author_name} with commit (#{if err then payload.compare_url else data})"
+        console.log "after send"
 
     catch error
       console.log "travis hook error: #{error}. Payload: #{req.body.payload}"
