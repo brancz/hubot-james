@@ -43,7 +43,7 @@ module.exports = (robot) ->
        received: true #some client have problems with and empty response
     }
 
-    user = robot.userForId 'broadcast'
+    user = {}
     user.room = query.room if query.room
     user.type = query.type if query.type
 
