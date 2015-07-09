@@ -1,4 +1,4 @@
-# My IRC Hubot
+# My Slack Hubot
 
 To set it up yourself just create a heroku app.
 
@@ -7,14 +7,11 @@ To set it up yourself just create a heroku app.
 Set configs
 
 	heroku config:set HEROKU_URL=...
-	heroku config:set HUBOT_IRC_SERVER=irc.freenode.net
-	heroku config:set HUBOT_IRC_ROOMS=...
-	heroku config:set HUBOT_IRC_NICK=...
-	heroku config:set HUBOT_IRC_UNFLOOD=true
+	heroku config:set HUBOT_SLACK_TOKEN=...
 
-_For documentation on configs see
-[hubot](https://github.com/github/hubot/blob/master/docs/deploying/heroku.md)
-and [irc-hubot](https://github.com/nandub/hubot-irc)_
+> For documentation on configs see
+> [hubot](https://github.com/github/hubot/blob/master/docs/deploying/heroku.md)
+> and [hubot-slack](https://github.com/slackhq/hubot-slack)
 
 And push to heroku
 
