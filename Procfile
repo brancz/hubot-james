@@ -1,1 +1,1 @@
-web: bin/hubot --adapter slack -n hubot_james
+web: bin/hubot -a slack
